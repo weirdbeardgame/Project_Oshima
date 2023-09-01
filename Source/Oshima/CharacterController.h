@@ -7,8 +7,8 @@
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Health.h"
-#include "ActorType.h"
+#include "Actor/Health.h"
+#include "Actor/ActorType.h"
 #include "CharacterController.generated.h"
 
 

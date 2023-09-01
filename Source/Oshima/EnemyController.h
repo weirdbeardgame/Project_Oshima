@@ -4,8 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "Health.h"
-#include "ActorType.h"
+#include "Actor/Health.h"
+#include "Actor/ActorType.h"
 #include "EnemyController.generated.h"
 
 UCLASS()
