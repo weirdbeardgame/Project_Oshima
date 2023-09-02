@@ -27,6 +27,7 @@ class OSHIMA_API ACharacterController : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputMappingContext* DefaultMappingContext;
 
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 		class UHealth* health;
 
@@ -36,6 +37,15 @@ class OSHIMA_API ACharacterController : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 		FString CharacterName;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+		class UCameraComponent* CameraComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+		UStaticMeshComponent* StaticMeshComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+		class USpringArmComponent* SpringArmComp;
+
 public:
 	// Sets default values for this character's properties
 	ACharacterController();
@@ -44,15 +54,6 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-
-	UPROPERTY(EditAnywhere)
-		class UCameraComponent* CameraComp;
-
-	UPROPERTY(EditAnywhere)
-		UStaticMeshComponent* StaticMeshComp;
-
-	UPROPERTY(EditAnywhere)
-		class USpringArmComponent* SpringArmComp;
 
 public:	
 	// Called every frame
