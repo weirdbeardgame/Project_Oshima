@@ -8,8 +8,8 @@
  * 
  */
 
-UCLASS()
-class OSHIMA_API UState : public UObject
+UCLASS(ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
+class OSHIMA_API UState : public UActorComponent
 {
 
 	GENERATED_BODY()
@@ -20,6 +20,8 @@ private:
 	bool isActive;
 public:
 	UState();
+	virtual UState* UpdateState();
+	virtual UState* GetInstance() { return this; }
 	virtual void Activate();
 	virtual void DeActivate();
 };

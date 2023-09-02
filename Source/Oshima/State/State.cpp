@@ -12,6 +12,13 @@ void UState::Activate()
 	isActive = true;
 }
 
+UState* UState::UpdateState()
+{
+	UState* returnState = nullptr;
+	// Inbetween's some logic that'll decide the next state
+	return returnState;
+}
+
 void UState::DeActivate()
 {
 	isActive = false;
