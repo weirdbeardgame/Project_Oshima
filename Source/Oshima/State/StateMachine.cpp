@@ -8,54 +8,40 @@ UStateMachine::UStateMachine()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
 // Called when the game starts
 void UStateMachine::BeginPlay()
 {
-	Super::BeginPlay();
-
-	// ...
-	
+	Super::BeginPlay();	
 }
 
 // Called every frame
 void UStateMachine::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-	// ...
+	currentState->Update();
 }
 
-bool UStateMachine::ChangeState(UState* newState)
+void UStateMachine::ChangeState(UState* newState)
+{
+	currentState->Stop();
+	currentState = newState;
+	currentState->Start();
+}
+
+bool UStateMachine::UpdateState()
 {
 	if (currentState != nullptr)
 	{
-		if (newState != currentState)
-		{
-			currentState->DeActivate();
-			delete(currentState);
-			currentState = newState;
-			return true;
-		}
+		ChangeState(currentState->UpdateState());
+		printf("StateChanged");
+		return true;
 	}
 	else
 	{
 		currentState = defaultS;
-		return true;
-	}
-	return false;
-}
-
-bool UStateMachine::UpdateState(UState& state)
-{
-	if (ChangeState(&state))
-	{
-		printf("StateChanged, do stuffs in here");
-		return true;
 	}
 	return false;
 }

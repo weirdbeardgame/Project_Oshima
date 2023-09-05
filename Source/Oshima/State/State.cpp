@@ -7,7 +7,7 @@ UState::UState()
 {
 }
 
-void UState::Activate()
+void UState::Start()
 {
 	isActive = true;
 }
@@ -19,10 +19,14 @@ UState* UState::UpdateState()
 	return returnState;
 }
 
-void UState::DeActivate()
+void UState::Stop()
 {
 	isActive = false;
 
 }
 
+void UState::Update()
+{
+
+}
 

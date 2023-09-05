@@ -22,6 +22,10 @@ public:
 	UState();
 	virtual UState* UpdateState();
 	virtual UState* GetInstance() { return this; }
-	virtual void Activate();
-	virtual void DeActivate();
+	UFUNCTION(BlueprintCallable)
+	virtual void Start();
+	UFUNCTION(BlueprintCallable)
+	virtual void Stop();
+	UFUNCTION(BlueprintImplementableEvent)
+	virtual void Update();
 };

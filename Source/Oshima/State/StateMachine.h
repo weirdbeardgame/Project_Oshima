@@ -30,6 +30,6 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 	// Note: DO NOT CALL CHANGE STATE DIRECTLY, call UpdateState
-	bool ChangeState(UState* newState);
-	bool UpdateState(UState& newState);
+	void ChangeState(UState* newState);
+	bool UpdateState();
 };

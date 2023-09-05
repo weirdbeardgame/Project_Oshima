@@ -25,6 +25,7 @@ public:
 	// Called every frame
 	virtual UState* UpdateState() override;
 	virtual USoundJack* GetInstance() override { return this; }
-	virtual void Activate() override;
-	virtual void DeActivate() override;
+	virtual void Start() override;
+	virtual void Stop() override;
+	virtual void Update() override;
 };

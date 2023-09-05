@@ -14,12 +14,12 @@ void USoundJack::BeginPlay()
 	SpringArmComp = character->GetSpringArm();
 }
 
-void USoundJack::Activate()
+void USoundJack::Start()
 {
 	// Do stuff with SpringArm, Do stuff with sound jacking enabler
 }
 
-void USoundJack::DeActivate()
+void USoundJack::Stop()
 {
 
 }
@@ -29,4 +29,9 @@ UState* USoundJack::UpdateState()
 {
 	// return PrevPlayerState;
 	return nullptr;
+}
+
+void USoundJack::Update()
+{
+	// If there's any extra logic handle that needs to be in here?
 }
