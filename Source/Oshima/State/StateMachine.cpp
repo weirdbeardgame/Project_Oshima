@@ -10,7 +10,6 @@ UStateMachine::UStateMachine()
 	PrimaryComponentTick.bCanEverTick = true;
 }
 
-
 // Called when the game starts
 void UStateMachine::BeginPlay()
 {
