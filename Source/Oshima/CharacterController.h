@@ -20,7 +20,7 @@ class OSHIMA_API ACharacterController : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* MoveAction;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputAction* LookAction;
 
 	/** MappingContext */
@@ -49,6 +49,7 @@ class OSHIMA_API ACharacterController : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACharacterController();
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool jacking;
 
 
 protected:

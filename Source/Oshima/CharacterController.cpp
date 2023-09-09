@@ -13,6 +13,8 @@ ACharacterController::ACharacterController()
 	PrimaryActorTick.bCanEverTick = true;
 
 	bUseControllerRotationYaw = true;
+    
+    jacking = false; //sound mechanic boolean
 
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = false; // Character moves in the direction of input...	
@@ -102,7 +104,7 @@ void ACharacterController::Look(const FInputActionValue& Value)
 	// input is a Vector2D
 	FVector2D LookAxisVector = Value.Get<FVector2D>();
 
-	if (Controller != nullptr)
+	if ((Controller != nullptr) && (jacking == false))
 	{
 		// add yaw and pitch input to controller
 		AddControllerYawInput(LookAxisVector.X);
