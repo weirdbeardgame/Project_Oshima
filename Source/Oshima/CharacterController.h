@@ -7,8 +7,8 @@
 #include "GameFramework/Character.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
-#include "Health.h"
-#include "ActorType.h"
+#include "Actor/Health.h"
+#include "Actor/ActorType.h"
 #include "CharacterController.generated.h"
 
 
@@ -51,7 +51,6 @@ public:
 	ACharacterController();
     UPROPERTY(EditAnywhere, BlueprintReadWrite) bool jacking;
 
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -62,6 +61,8 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	USpringArmComponent* GetSpringArm() { return SpringArmComp; }
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
