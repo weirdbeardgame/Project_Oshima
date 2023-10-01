@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/AudioComponent.h" 
+#include "Components/SkeletalMeshComponent.h" 
 #include "Weapon.generated.h"
 
 UCLASS()
@@ -12,16 +14,22 @@ class OSHIMA_API AWeapon : public AActor
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponData", meta = (AllowPrivateAccess = "true"))
-	FString WeaponName;
+		FString WeaponName;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponData", meta = (AllowPrivateAccess = "true"))
-	FString WeaponDescription;
+		FString WeaponDescription;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponData", meta = (AllowPrivateAccess = "true"))
-	float Damage;	
+		float Damage;	
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "WeaponData", meta = (AllowPrivateAccess = "true"))
-	float RateOfFire;
+		float RateOfFire;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"), Category = "Components")
+		UAudioComponent* audio;
+		
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"), Category = "Components")
+	USkeletalMeshComponent* skeleMan;
 
 public:	
 	// Sets default values for this actor's properties

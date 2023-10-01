@@ -9,6 +9,7 @@
 #include "Camera/CameraComponent.h"
 #include "ActorComponents/Health.h"
 #include "ActorComponents/ActorType.h"
+#include "Weapon.h"
 #include "CharacterController.generated.h"
 
 
@@ -27,6 +28,8 @@ class OSHIMA_API ACharacterController : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 		class UInputMappingContext* DefaultMappingContext;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	AWeapon *currentWeapon;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "CharacterData", meta = (AllowPrivateAccess = "true"))
 		class UHealth* health;
@@ -49,8 +52,8 @@ class OSHIMA_API ACharacterController : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACharacterController();
-    UPROPERTY(EditAnywhere, BlueprintReadWrite) bool jacking;
-
+    UPROPERTY(EditAnywhere, BlueprintReadWrite) 
+	bool jacking;
 
 protected:
 	// Called when the game starts or when spawned
@@ -65,4 +68,7 @@ public:
 
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
+
+	UFUNCTION(BlueprintNativeEvent)
+	void EquipWeapon(AWeapon* weap);
 };
