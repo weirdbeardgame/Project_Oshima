@@ -111,3 +111,11 @@ void ACharacterController::Look(const FInputActionValue& Value)
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
 }
+
+void ACharacterController::EquipWeapon_Implementation(AWeapon* equip)
+{
+	if (currentWeapon != equip)
+	{
+		currentWeapon = equip;
+	}
+}
