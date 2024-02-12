@@ -27,18 +27,24 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	
+
+	UFUNCTION(BlueprintCallable)
 	void SetDefaultHealth(float val) {
 		if (val > 0)
 			maxHealth = val;
 	}
 
+	UFUNCTION(BlueprintCallable)
 	float IncreaseHealth(float val);
+	UFUNCTION(BlueprintCallable)
 	float DecreaseHealth(float val);
 
 	// These are meant for buffer effects like poison or anything like that. If we get that complex
+	UFUNCTION(BlueprintCallable)
 	float IncreaseMaxHealth(float val);
+	UFUNCTION(BlueprintCallable)
 	float DecreaseMaxHealth(float val);
 	
+	UFUNCTION(BlueprintCallable)
 	void ResetHealth();
 };
