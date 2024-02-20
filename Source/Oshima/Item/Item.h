@@ -9,7 +9,7 @@ UENUM()
 enum class Operator {ADD, SUBTRACT, DIVIDE, MODULO};
 
 UCLASS()
-class OSHIMA_API UItem : public UDataAsset
+class OSHIMA_API UItem : public UPrimaryDataAsset
 {
 	GENERATED_BODY()
 
@@ -31,4 +31,6 @@ class OSHIMA_API UItem : public UDataAsset
 public:
 	UItem();
 	void Use();
+
+	FString GetItemName() { return name; }
 };
