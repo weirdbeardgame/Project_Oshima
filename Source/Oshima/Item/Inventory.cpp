@@ -37,6 +37,11 @@ void UInventory::AddItem(UItem item)
 	if (!Inventory.Contains(item.GetName()))
 	{
 		// Needs to be slot!
-		Inventory.Add(item.GetItemName(), item);
+		//Inventory.Add(item.GetItemName(), item);
 	}
+}
+
+UItem UInventory::UseItem()
+{
+	return UItem();
 }
