@@ -26,10 +26,17 @@ private:
 
 	// For stacking
 	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
-	int itemAmt;
+	int maxAmtStackable;	
+	
+	// For stacking
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	int amtStacked;
+
 
 public:
 	UHorizontalItemSlot();
+
+	bool AddItem(UItem* toAdd);
 
 	UItem* UseItem();
 	FString GetItemName() { return itemContained->GetItemName(); }
